@@ -22,6 +22,11 @@ export class FormLoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.login = new FormGroup({
+      user: new FormControl(),
+      pass: new FormControl(),
+      rePass: new FormControl()
+    });
     this.login = this.fb.group({
       user: ['', [Validators.required]],
       pwGroup: this.fb.group({
@@ -30,6 +35,7 @@ export class FormLoginComponent implements OnInit {
       }, {validator: comparePassword}),
     });
   }
+
   // tslint:disable-next-line:typedef
   onSubmit() {
     console.log(this.login);

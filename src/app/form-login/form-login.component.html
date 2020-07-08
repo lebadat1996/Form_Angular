@@ -1,24 +1,26 @@
-<h2 style="text-align: center">Form Login</h2>
-<form [formGroup]="login" (ngSubmit)="onSubmit()" class="col-md-6 offset-md-3">
-  <div class="form-group row">
+<form [formGroup]="login" (ngSubmit)="onSubmit()" class="col-md-6 offset-md-3" style="border: 2px solid cadetblue">
+  <div class=" col-md-6 offset-md-3">
+    <h2 style="color: white">Form Login <i class=" fa fa-cog fa-spin "></i></h2>
+  </div>
+  <div class="form-group row btn-primary">
     <label class="col">
-      Tài Khoản
-      <input type="text" class="form-control" formControlName="user">
+      Tài Khoản <span class="fa fa-gear fa-spin"></span>
+      <input type="text" class="form-control " formControlName="user">
     </label>
   </div>
   <div class="alert alert-danger" role="alert" *ngIf="login.get('user').invalid">
     Invalid user!
   </div>
   <fieldset formGroupName="pwGroup">
-    <div class="form-group row">
+    <div class="form-group row btn-primary">
       <label class="col">
-        Password
+        Password <span class="fa fa-gear fa-spin"></span>
         <input type="password" class="form-control" formControlName="password">
       </label>
     </div>
-    <div class="form-group row">
+    <div class="form-group row btn-primary">
       <label class="col">
-        Confirm Password
+        Confirm Password <span class="fa fa-gear fa-spin"></span>
         <input type="password" class="form-control" formControlName="confirmPassword">
       </label>
     </div>
